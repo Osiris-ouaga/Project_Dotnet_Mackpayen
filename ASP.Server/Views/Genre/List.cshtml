@@ -1,0 +1,33 @@
+﻿@using ASP.Server.Model
+
+@model IEnumerable<Genre>
+@{
+    ViewData["Title"] = "Liste Genre";
+}
+
+<div class="listeGenres">
+    <h1>Liste des Genres:</h1>
+    <!-- la liste des genres est dans la variable Model qui est typé en ligne 3, elle correspond à la variable xxx dans View(xxx) du controller -->
+      <table id="myTable" class=" table table-bordered table-striped table-condensed">
+          <thead>
+            <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th></th>
+            <th></th>
+            </tr>
+          </thead>
+          
+             @foreach (var genre in Model)
+                {
+                     <tr>
+                        <td>@genre.Id</td>
+                        <td>@genre.Name</td>
+                        <td> @Html.ActionLink("Edit", "Edit", new { controller = "Genre",  id = genre.Id }) </td>
+                        <td> @Html.ActionLink("Delete", "Delete", new { controller = "Genre",  id = genre.Id }) </td>
+                     </tr>   
+                }
+        </table>
+    
+</div>
+

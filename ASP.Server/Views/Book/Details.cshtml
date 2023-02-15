@@ -1,0 +1,29 @@
+﻿@using ASP.Server.Model
+@model Book
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="listeBooks">
+    <h1>@Model.Name</h1>
+    <h5> Genres : 
+        <ul>
+         @{
+         foreach (var genre in Model.Genres)
+         {
+                <li>
+                    @genre.Name
+                </li>
+           }
+         }
+          
+        </ul>
+         
+    </h5>
+    <h3>Auteur : @Model.Author</h3>
+    <h3>Prix : @Model.Price EUR</h3>
+    <p>
+        @Model.Content
+    </p>
+</div>
+

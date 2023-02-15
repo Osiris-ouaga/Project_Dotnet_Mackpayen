@@ -1,0 +1,87 @@
+﻿<Page x:Class="WPF.Reader.Pages.ListBooks"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPF.Reader.Pages"
+      xmlns:vm="clr-namespace:WPF.Reader.ViewModel"
+      xmlns:model="clr-namespace:WPF.Reader.Model"
+      d:DataContext="{d:DesignInstance Type=vm:ListBook, d:IsDesignTimeCreatable=True}"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ListBooks">
+
+
+    <Grid>
+        <StackPanel Orientation = "Horizontal">
+            <ListBox Name = "listbox" Margin = "20,20,20,50" Width="100" Background="#FFA29E9E">
+                <ListBoxItem Content = "Books"  />
+                <ListBoxItem Content = "Genres" />
+            </ListBox>
+
+            <StackPanel>
+                <!--         <StackPanel.Style>
+                    <Style TargetType="StackPanel">
+                        <Setter Property="Visibility" Value="Hidden" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=listbox, Path=SelectedIndex }" Value="0">
+                                <Setter Property="Visibility" Value="Visible" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Style> -->
+                <Label Content="Books" />
+                <Button Command="{Binding ClearBooks}" Content="Reload"/>
+
+
+                <ListView ItemsSource="{Binding Path= Books}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="5,3,15,3"
+                                    Text="{Binding Id, Mode=OneWay}" />
+                                <TextBlock Width="200"
+                                    Text="{Binding Name, Mode=TwoWay,
+                                    UpdateSourceTrigger=PropertyChanged, Delay=450}"/>
+                                <Button Command="{Binding DataContext.ItemSelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}}" CommandParameter="{Binding .}"  Content="See Book" Foreground="#FF39B50E"/>
+
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                
+            </StackPanel>
+
+            <StackPanel>
+                <StackPanel.Style>
+                    <Style TargetType="StackPanel">
+                        <Setter Property="Visibility" Value="Hidden" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=listbox, Path=SelectedIndex }" Value="1">
+                                <Setter Property="Visibility" Value="Visible" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Style>
+                <Label Content="Genres" />
+
+                <ListView ItemsSource="{Binding Path= Genres}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="5,3,15,3"
+                                    Text="{Binding Id, Mode=OneWay}" />
+                                <TextBlock Width="200"
+                                    Text="{Binding Name, Mode=TwoWay,
+                                    UpdateSourceTrigger=PropertyChanged, Delay=450}"/>
+                                <Button Command="{Binding DataContext.GenreSelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}}" CommandParameter="{Binding Id}"  Content="See Books" Foreground="#FF39B50E"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
+
