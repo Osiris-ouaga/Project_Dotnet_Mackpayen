@@ -6,21 +6,26 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using ASP.Server.Model;
+using ASP.Server.Database;
 
 namespace ASP.Server.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly LibraryDbContext libraryDbContext;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, LibraryDbContext libraryDbContext)
         {
             _logger = logger;
+            this.libraryDbContext = libraryDbContext;
         }
 
         public IActionResult Index()
         {
-            return View();
+            List<Book> ListBooks = libraryDbContext.Books.ToList();
+            return View(ListBooks);
         }
 
         public IActionResult Privacy()

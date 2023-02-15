@@ -1,4 +1,6 @@
-﻿@{
+﻿@using ASP.Server.Model
+@model IEnumerable<Book>
+@{
     ViewData["Title"] = "Home Page";
 }
        
@@ -7,8 +9,8 @@
                 <!-- Slide One - Set the background image for this slide in the line below -->
             <div class="carousel-item active" style="background-image: url('https://img-cdn.inc.com/image/upload/w_1920,h_1080,c_fill/images/panoramic/GettyImages-900301626_437925_t2i3bm.jpg')">
                     <div class="carousel-caption d-none d-md-block">
-                        <h3 class="display-4">Karibu Kilimanjaro</h3>
-                        <p class="lead">This is a description for the first slide.</p>
+                        <h3 class="display-4">Welcome to Le Malabar</h3>
+            <p class="lead">A local bookstore that offers you tailor-made content.</p>
                     </div>
              </div>
         </div>
@@ -18,8 +20,8 @@
 
     <!-- Page Heading -->
     <h1 class="my-4 text-info display-4">
-        VIP Destination Packages,<BR />
-        <small class="text-secondary">Lux with Kilimanjaro Hotel</small>
+        What could make you happy?<BR />
+        <small class="text-secondary">Consult</small>
     </h1>
     <p class="lead ">OTHER top Destination</p>
     <button type="button" class="text-info shadow border-0 btn btn-outline-secondary">Miami</button>
@@ -30,58 +32,29 @@
 
 
     <div class="row mt-4">
-        <div class="col-lg-3 col-sm-6 mb-4">
-            <div class="card shadow border-0 h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                    <h4 class="card-title">
-                        <a href="#">Hotel Package</a>
-                    </h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+        @foreach (var book in Model)
+        {
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card shadow border-0 h-100">
+                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">@book.Name</a>
+                        </h4>
+                    </div>
+                    <div class="card-title">
+                        <p class="card-text">@book.Author</p>
+                        <span class="card-text">@book.Price</span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-3 col-sm-6 mb-4">
-            <div class="card shadow border-0 h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                    <h4 class="card-title">
-                        <a href="#">Hotel Package</a>
-                    </h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-sm-6 mb-4">
-            <div class="card shadow border-0 h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                    <h4 class="card-title">
-                        <a href="#">Hotel Package</a>
-                    </h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-sm-6 mb-4">
-            <div class="card shadow border-0 h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                    <h4 class="card-title">
-                        <a href="#">Hotel Packager</a>
-                    </h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-                </div>
-            </div>
-        </div>
-
-
+        }
     </div>
 </div>
 
 <!-- Page Content -->
 <div class="container py-4 mt-4">
-    <p class="display-3">Meet our Hotel Team</p>
+    <p class="display-3">Our Team</p>
     <div class="row">
         <!-- Team Member 1 -->
         <div class="col-xl-3 col-md-6 mb-4">
