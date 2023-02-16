@@ -15,7 +15,7 @@ namespace WPF.Reader.Service
             getBooks();
             getGenres();
         }
-        String URL = "https://127.0.0.1:5001";
+        String URL = "https://localhost:5001/swagger/v1/swagger.json";
         // A remplacer avec vos propre données !!!!!!!!!!!!!!
         // Pensé qu'il ne faut mieux ne pas réaffecter la variable Books, mais juste lui ajouer et / ou enlever des éléments
         // Donc pas de LibraryService.Instance.Books = ...

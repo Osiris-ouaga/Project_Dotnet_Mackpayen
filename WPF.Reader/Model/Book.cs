@@ -15,7 +15,7 @@ using System.Windows.Input;
 namespace WPF.Reader.Model
 {
     // A vous de completer ce qu'est un Livre !!
-/*    public class Book : INotifyPropertyChanged
+   public class Book : INotifyPropertyChanged
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -25,6 +25,6 @@ namespace WPF.Reader.Model
 
         public event PropertyChangedEventHandler PropertyChanged;
           
-    }*/
+    }
 
 }

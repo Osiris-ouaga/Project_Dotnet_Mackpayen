@@ -17,7 +17,7 @@
             <Button Command="{Binding Path=GoToHome}" Width="50" Content="Home" FontWeight="Bold" Background="#FF050C05" Foreground="#FF39B50E"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Left" >
-            <Label Content="Copyright - All rights reserved Kevin J. DUBUCHE and  Gaston LANGATE and Barbara G. THEODORE" HorizontalAlignment="Center" FontFamily="Segoe UI" FontWeight="Bold" FontStyle="Italic" FontSize="11" />
+            <Label Content="Copyright - All rights reserved @MBDS Prince Divin Mackpayen, Jules Vesnat" HorizontalAlignment="Center" FontFamily="Segoe UI" FontWeight="Bold" FontStyle="Italic" FontSize="11" />
         </StackPanel>
         <Label DockPanel.Dock="Top" Content="Library system" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="30px" FontFamily="Algerian" FontWeight="Bold"/>
         <Label/>
