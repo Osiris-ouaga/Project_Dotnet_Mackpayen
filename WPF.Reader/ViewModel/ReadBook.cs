@@ -24,9 +24,6 @@ namespace WPF.Reader.ViewModel
             CurrentBook = book;
         }
 
-      
-        // A vous de jouer maintenant
-
     }
 
     /* Cette classe sert juste a afficher des donnée de test dans le designer */
