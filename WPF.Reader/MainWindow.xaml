@@ -14,7 +14,7 @@
     </Window.Resources>
     <DockPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right" >
-            <Button Command="{Binding Path=GoToHome}" Width="50" Content="Home" FontWeight="Bold" Background="#FF050C05" Foreground="#FF39B50E"/>
+            <Button Command="{Binding Path=GoToHome}" Width="50" Content="Home" FontWeight="Bold" Background="Teal" Foreground="White"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Left" >
             <Label Content="Copyright - All rights reserved @MBDS Prince Divin Mackpayen, Jules Vesnat" HorizontalAlignment="Center" FontFamily="Segoe UI" FontWeight="Bold" FontStyle="Italic" FontSize="11" />

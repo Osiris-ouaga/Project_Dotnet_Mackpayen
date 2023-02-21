@@ -13,7 +13,7 @@
 
     <Grid>
         <StackPanel Orientation = "Horizontal">
-            <ListBox Name = "listbox" Margin = "20,20,20,50" Width="100" Background="#FFA29E9E">
+            <ListBox Name = "listbox" Margin = "20,20,20,50" Width="100" Background="teal">
                 <ListBoxItem Content = "Books" />
                 <ListBoxItem Content = "Genres" />
             </ListBox>
@@ -40,7 +40,7 @@
                                 <TextBlock Width="200"
                                     Text="{Binding Name, Mode=TwoWay,
                                     UpdateSourceTrigger=PropertyChanged, Delay=450}"/>
-                                <Button Command="{Binding DataContext.ItemSelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}}" CommandParameter="{Binding .}"  Content="See Book" Foreground="#FF39B50E"/>
+                                <Button Command="{Binding DataContext.ItemSelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}}" CommandParameter="{Binding .}"  Content="See Book" Foreground="White"/>
 
                             </StackPanel>
                         </DataTemplate>

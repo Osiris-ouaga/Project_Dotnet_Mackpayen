@@ -39,7 +39,7 @@ namespace WPF.Reader.Service
         {
             var client = new API.Client(new System.Net.Http.HttpClient() { BaseAddress = new Uri(URL) });
             var books = await client.ApiBookGetBooksAsync(id, null, null);
-            //Books.Clear();
+            Books.Clear();
             foreach (BookLight book in books)
             {
                 Books.Add(book);
@@ -56,14 +56,6 @@ namespace WPF.Reader.Service
                 Genres.Add(genre);
             }
         }
-
-        /*        public ObservableCollection<Book> Book { get; set; } = new ObservableCollection<Book>() {
-                    new Book(),
-                    new Book(),
-                    new Book()
-
-                };
-        */
         public  Book getBook(int id)
         {
             var client = new API.Client(new System.Net.Http.HttpClient() { BaseAddress = new Uri(URL) });

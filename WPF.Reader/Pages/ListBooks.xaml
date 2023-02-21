@@ -14,22 +14,12 @@
 
     <Grid>
         <StackPanel Orientation = "Horizontal">
-            <ListBox Name = "listbox" Margin = "20,20,20,50" Width="100" Background="#FFA29E9E">
+            <ListBox Name = "listbox" Margin = "20,20,20,50" Width="100" Background="teal" Foreground="White">
                 <ListBoxItem Content = "Books"  />
                 <ListBoxItem Content = "Genres" />
             </ListBox>
 
             <StackPanel>
-                <!--         <StackPanel.Style>
-                    <Style TargetType="StackPanel">
-                        <Setter Property="Visibility" Value="Hidden" />
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding ElementName=listbox, Path=SelectedIndex }" Value="0">
-                                <Setter Property="Visibility" Value="Visible" />
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </StackPanel.Style> -->
                 <Label Content="Books" />
                 <Button Command="{Binding ClearBooks}" Content="Reload"/>
 
@@ -43,7 +33,7 @@
                                 <TextBlock Width="200"
                                     Text="{Binding Name, Mode=TwoWay,
                                     UpdateSourceTrigger=PropertyChanged, Delay=450}"/>
-                                <Button Command="{Binding DataContext.ItemSelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}}" CommandParameter="{Binding .}"  Content="See Book" Foreground="#FF39B50E"/>
+                                <Button Command="{Binding DataContext.ItemSelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}}" CommandParameter="{Binding .}"  Content="See Book" Foreground="teal"/>
 
                             </StackPanel>
                         </DataTemplate>
@@ -74,7 +64,7 @@
                                 <TextBlock Width="200"
                                     Text="{Binding Name, Mode=TwoWay,
                                     UpdateSourceTrigger=PropertyChanged, Delay=450}"/>
-                                <Button Command="{Binding DataContext.GenreSelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}}" CommandParameter="{Binding Id}"  Content="See Books" Foreground="#FF39B50E"/>
+                                <Button Command="{Binding DataContext.GenreSelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}}" CommandParameter="{Binding Id}"  Content="See Books" Foreground="teal"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>

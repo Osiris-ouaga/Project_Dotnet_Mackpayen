@@ -33,7 +33,7 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
 
-            <Button Width="90" Command="{Binding ReadCommand}" CommandParameter="{Binding CurrentBook.Id}"  Content="Read Content" FontWeight="Bold"  Foreground="#FF0EA01E"/>
+            <Button Width="90" Command="{Binding ReadCommand}" CommandParameter="{Binding CurrentBook.Id}"  Content="Read Content" FontWeight="Bold"  Foreground="Teal"/>
 
         </StackPanel>
             
