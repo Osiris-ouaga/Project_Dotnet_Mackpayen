@@ -16,11 +16,6 @@ namespace WPF.Reader.Service
             getGenres();
         }
         String URL = "https://localhost:5001/swagger/v1/swagger.json";
-        // A remplacer avec vos propre données !!!!!!!!!!!!!!
-        // Pensé qu'il ne faut mieux ne pas réaffecter la variable Books, mais juste lui ajouer et / ou enlever des éléments
-        // Donc pas de LibraryService.Instance.Books = ...
-        // mais plutot LibraryService.Instance.Books.Add(...)
-        // ou LibraryService.Instance.Books.Clear()
 
         public ObservableCollection<BookLight> Books { get; set; } = new ObservableCollection<BookLight>() {
             //new BookLight(),
@@ -44,7 +39,7 @@ namespace WPF.Reader.Service
         {
             var client = new API.Client(new System.Net.Http.HttpClient() { BaseAddress = new Uri(URL) });
             var books = await client.ApiBookGetBooksAsync(id, null, null);
-            Books.Clear();
+            //Books.Clear();
             foreach (BookLight book in books)
             {
                 Books.Add(book);
@@ -76,10 +71,5 @@ namespace WPF.Reader.Service
             return book.Result;
 
         }
-
-      
-
-        // C'est aussi ici que vous ajouterez les requète réseau pour récupérer les livres depuis le web service que vous avez fait
-        // Vous pourrez alors ajouter les livres obtenu a la variable Books !
     }
 }

@@ -24,6 +24,18 @@ namespace WPF.Reader
             this.canExecute = canExecute;
         }
 
+        public RelayCommand(Action<object> goToPreviousPage, Func<bool> canGoToPreviousPage)
+        {
+        }
+
+        public RelayCommand(Action goToNextPage, Func<bool> canGoToNextPage)
+        {
+        }
+
+        public RelayCommand(Action goBack)
+        {
+        }
+
         public bool CanExecute(object parameter)
         {
             return this.canExecute == null || this.canExecute(parameter);

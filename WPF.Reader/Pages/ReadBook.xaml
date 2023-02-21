@@ -13,15 +13,23 @@
     <Page.Resources>
         <vm:Navigator x:Key="navigator" />
     </Page.Resources>
+   
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="80" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="80" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TextBlock FontSize="50" Grid.Row="0" Text="{Binding CurrentBook.Name}"></TextBlock>
-        <TextBlock Grid.Row="1" Text="{Binding CurrentBook.Content}" Margin="80,0,80,0"></TextBlock>
+        <TextBlock FontSize="50" Grid.Row="0" Text="{Binding CurrentBook.Name}" />
+        <ScrollViewer Grid.Row="1">
+            <StackPanel>
+                <TextBlock TextWrapping="Wrap" Text="{Binding CurrentBook.Content}" Margin="80,0,80,0" />
+                <Button Command="{Binding Path=GoToPreviousPage}" CommandParameter="PAGE" Height="30" VerticalAlignment="Bottom" Width="100" Content="Previous" Margin="0,10,0,10" />
+                <Button Command="{Binding Path=GoToNextPage}" CommandParameter="PAGE" Height="30" VerticalAlignment="Bottom" Width="100" Content="Next" Margin="0,10,0,10" />
+            </StackPanel>
+        </ScrollViewer>
         <Button Grid.Row="2" Command="{Binding Path=GoBack, Source={StaticResource ResourceKey=navigator}}" CommandParameter="LIST" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" Content="Back to Details" Margin="0,0,0,27" FontWeight="Bold" Foreground="#FF0EA01E"/>
     </Grid>
+
 </Page>
 

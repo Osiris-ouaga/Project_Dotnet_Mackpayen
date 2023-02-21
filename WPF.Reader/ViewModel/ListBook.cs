@@ -19,7 +19,6 @@ namespace WPF.Reader.ViewModel
         public ICommand GoToGenres { get; set; }
         public ICommand GenreSelectedCommand { get; set; }
         public ICommand ClearBooks { get; set; }
-        // n'oublier pas faire de faire le binding dans ListBook.xaml !!!!
         public ObservableCollection<BookLight> Books => Ioc.Default.GetRequiredService<LibraryService>().Books;
 
         public ObservableCollection<Genre> Genres => Ioc.Default.GetRequiredService<LibraryService>().Genres;
@@ -28,7 +27,7 @@ namespace WPF.Reader.ViewModel
         {
             ItemSelectedCommand = new RelayCommand(book => {
                 Ioc.Default.GetRequiredService<INavigationService>().Navigate<DetailsBook>(book);
-                /* the livre devrais etre dans la variable book */ });
+                });
 
             GoToGenres = new RelayCommand(book =>
             {

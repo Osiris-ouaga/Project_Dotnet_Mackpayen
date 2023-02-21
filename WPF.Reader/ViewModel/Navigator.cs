@@ -6,9 +6,7 @@ using WPF.Reader.Service;
 
 namespace WPF.Reader.ViewModel
 {
-    /// <summary>
-    /// Aucune raison de toucher a cette classe, mais vous pouvez par contre utilisé les propriété GoBack et GoToHome
-    /// </summary>
+   
     class Navigator : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;

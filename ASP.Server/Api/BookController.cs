@@ -56,13 +56,8 @@ namespace ASP.Server.Api
         //   - Ex: libraryDbContext.MyObjectCollection.Include(x => x.yyyyy).Where(x => x.yyyyyy.Contains(z)).Skip(i).Take(j).ToList()
 
 
-        // Vous vous montre comment faire la 1er, a vous de la compléter et de faire les autres !
         public ActionResult<List<BookLight>> GetBooks(int? genre, int offset = 0, int limit = 10)
         {
-            // TODO : VALIDATION OF PARAM
-
-
-            //throw new NotImplementedException("You have to do it youtself");
          
             IEnumerable<BookLight> books = libraryDbContext.Books.Include(book => book.Genres).Select(x => new BookLight() { Book = x});
             if (genre != null)

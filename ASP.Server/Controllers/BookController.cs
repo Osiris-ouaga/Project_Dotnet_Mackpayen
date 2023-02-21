@@ -82,6 +82,13 @@ namespace ASP.Server.Controllers
             List<Book> ListBooks = libraryDbContext.Books.ToList();
             return View(ListBooks);
         }
+        //Nombre total de livres
+        public ActionResult<int> Count()
+        {
+            int bookCount = libraryDbContext.Books.Count();
+            return bookCount;
+        }
+
 
         public ActionResult<CreateBookModel> Create(CreateBookModel book)
         {
@@ -151,7 +158,6 @@ namespace ASP.Server.Controllers
                         genresOfTheBook.Add(existedGenre);
                     }
                 }
-                // Completer la création du livre avec toute les information nécéssaire que vous aurez ajoutez, et metter la liste des gener récupéré de la base aussi
 
                 existingBook.Name = bookParam.Book.Name;
                 existingBook.Author = bookParam.Book.Author;
@@ -181,13 +187,13 @@ namespace ASP.Server.Controllers
                 }
                 else
                 {
-                    ///Todo
+                    
                     return RedirectToAction("List");
                 }
             }
             catch
             {
-                ///Todo
+                
                 return RedirectToAction("List");
             }
         }
